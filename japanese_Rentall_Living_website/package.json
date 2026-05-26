@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
-    "build": "next build --webpack",
+    "build": "cross-env NODE_ENV=production next build --webpack",
     "start": "next start",
     "lint": "eslint"
   },
@@ -19,6 +19,7 @@
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "cross-env": "^10.1.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.6"
   }
