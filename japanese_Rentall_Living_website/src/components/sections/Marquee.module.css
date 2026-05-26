@@ -1,0 +1,44 @@
+.section {
+  padding: var(--space-12) 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(245, 240, 232, 0.05);
+  border-bottom: 1px solid rgba(245, 240, 232, 0.05);
+  background: var(--color-sumi);
+}
+
+.track {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.track + .track {
+  margin-top: var(--space-4);
+}
+
+.row1, .row2 {
+  display: inline-flex;
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2.5vw, 1.8rem);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--color-mist);
+  opacity: 0.5;
+}
+
+.row1 span, .row2 span {
+  padding-right: 2rem;
+  white-space: nowrap;
+}
+
+.row1 {
+  animation: marquee 40s linear infinite;
+}
+
+.row2 {
+  animation: marquee-reverse 45s linear infinite;
+}
+
+.section:hover .row1,
+.section:hover .row2 {
+  animation-play-state: paused;
+}

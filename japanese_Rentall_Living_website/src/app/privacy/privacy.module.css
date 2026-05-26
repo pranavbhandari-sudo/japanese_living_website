@@ -1,0 +1,140 @@
+/* Privacy page shares the same legal layout */
+
+/* Hero */
+.hero {
+  padding: calc(var(--space-32) + var(--space-16)) 0 var(--space-16);
+  background: var(--color-void);
+}
+
+.heroTitle {
+  font-family: var(--font-jp);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--color-shoji);
+  margin-bottom: var(--space-4);
+}
+
+.heroSub {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--color-mist);
+}
+
+/* Content Section */
+.contentSection {
+  background: var(--color-void);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+}
+
+@media (min-width: 768px) {
+  .layout {
+    grid-template-columns: 240px 1fr;
+    gap: var(--space-16);
+  }
+}
+
+/* Table of Contents */
+.toc {
+  position: sticky;
+  top: 120px;
+  align-self: start;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .toc {
+    display: block;
+  }
+}
+
+.tocTitle {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-6);
+}
+
+.toc ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.toc a {
+  font-family: var(--font-jp);
+  font-size: 0.8rem;
+  color: var(--color-mist);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: block;
+  padding: var(--space-1) 0;
+  border-left: 2px solid transparent;
+  padding-left: var(--space-4);
+}
+
+.toc a:hover {
+  color: var(--color-shoji);
+  border-left-color: var(--color-gold);
+}
+
+/* Content */
+.content {
+  max-width: 720px;
+}
+
+.article {
+  margin-bottom: var(--space-12);
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid rgba(245, 240, 232, 0.06);
+}
+
+.article:last-child {
+  border-bottom: none;
+}
+
+.article h2 {
+  font-family: var(--font-jp);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--color-shoji);
+  margin-bottom: var(--space-6);
+}
+
+.article p {
+  font-family: var(--font-jp);
+  font-size: 0.9rem;
+  color: var(--color-mist);
+  line-height: 2;
+  margin-bottom: var(--space-4);
+}
+
+.article ul {
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-4);
+  padding-left: var(--space-6);
+}
+
+.article li {
+  font-family: var(--font-jp);
+  font-size: 0.9rem;
+  color: var(--color-mist);
+  line-height: 2;
+  position: relative;
+  padding-left: var(--space-4);
+}
+
+.article li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-gold);
+}

@@ -1,0 +1,206 @@
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    grid-template-columns: 45% 55%;
+  }
+}
+
+/* Left Panel */
+.left {
+  display: flex;
+  align-items: center;
+  padding: var(--space-32) var(--space-6) var(--space-16);
+  background: var(--color-void);
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .left {
+    padding: var(--space-32) var(--space-12);
+  }
+}
+
+.leftContent {
+  width: 100%;
+  max-width: 520px;
+}
+
+/* Label Row */
+.labelRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+
+.goldDot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-gold);
+  border-radius: 50%;
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.labelText {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-mist);
+}
+
+/* Headline */
+.headline {
+  margin-bottom: var(--space-8);
+}
+
+.headlineWord {
+  font-family: var(--font-jp);
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--color-shoji);
+  overflow: hidden;
+}
+
+.headlineWord:last-child {
+  color: var(--color-gold);
+}
+
+/* Subtitle */
+.subtitle {
+  font-family: var(--font-jp);
+  font-size: 1rem;
+  color: var(--color-mist);
+  line-height: 1.8;
+  margin-bottom: var(--space-12);
+  max-width: 380px;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-16);
+}
+
+/* Scroll Hint */
+.scrollHint {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.scrollLine {
+  width: 40px;
+  height: 1px;
+  background: var(--color-gold);
+  opacity: 0.5;
+}
+
+.scrollText {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-mist);
+  opacity: 0.6;
+}
+
+/* Right Panel */
+.right {
+  position: relative;
+  min-height: 50vh;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .right {
+    min-height: 100vh;
+  }
+}
+
+.imageContainer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.imageParallax {
+  position: absolute;
+  inset: -20%;
+  width: 140%;
+  height: 140%;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Floating Card */
+.floatingCard {
+  position: absolute;
+  bottom: var(--space-12);
+  left: var(--space-6);
+  background: rgba(10, 10, 15, 0.75);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(245, 240, 232, 0.08);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  animation: float 6s ease-in-out infinite;
+  z-index: 3;
+}
+
+@media (min-width: 768px) {
+  .floatingCard {
+    left: var(--space-12);
+    bottom: var(--space-16);
+  }
+}
+
+.cardRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-shoji);
+}
+
+.cardRating {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--color-gold);
+}
+
+.cardStat {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--color-shoji);
+}
+
+.cardLabel {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--color-mist);
+  align-self: flex-end;
+  padding-bottom: 4px;
+}
+
+.cardDivider {
+  width: 100%;
+  height: 1px;
+  background: rgba(245, 240, 232, 0.1);
+  margin: var(--space-3) 0;
+}
