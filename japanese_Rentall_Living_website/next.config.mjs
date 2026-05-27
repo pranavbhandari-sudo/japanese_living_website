@@ -9,7 +9,6 @@ const nextConfig = {
   turbopack: {
     root: __dirname,
   },
-  outputFileTracingRoot: __dirname,
 };
 
 export default nextConfig;

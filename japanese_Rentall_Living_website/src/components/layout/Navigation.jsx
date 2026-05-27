@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -25,8 +25,14 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const prevPathnameRef = useRef(pathname);
+
   useEffect(() => {
-    setIsOpen(false);
+    if (prevPathnameRef.current !== pathname) {
+      prevPathnameRef.current = pathname;
+      const id = requestAnimationFrame(() => setIsOpen(false));
+      return () => cancelAnimationFrame(id);
+    }
   }, [pathname]);
 
   useEffect(() => {
