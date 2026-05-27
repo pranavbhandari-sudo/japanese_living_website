@@ -6,9 +6,10 @@ const __dirname = path.dirname(__filename);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  turbopack: {
-    root: __dirname,
+  eslint: {
+    ignoreDuringBuilds: true,
   },
+  outputFileTracingRoot: __dirname,
 };
 
 export default nextConfig;

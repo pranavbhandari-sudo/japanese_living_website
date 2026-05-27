@@ -1,5 +1,5 @@
 import "./globals.css";
-import SmoothScroll from "@/components/ui/SmoothScroll";
+import SmoothScrollWrapper from "@/components/ui/SmoothScrollWrapper";
 
 export const metadata = {
   title: "住まい（SUMAI）— 外国人・留学生のための理想のお部屋探し",
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ja">
       <body>
-        <SmoothScroll />
+        <SmoothScrollWrapper />
         {children}
         <div className="noise-overlay" aria-hidden="true" />
       </body>
